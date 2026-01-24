@@ -2,7 +2,7 @@
 name = "medicalgpt"
 version = "0.1.0"
 description = "MedicalGPT training and evaluation"
-requires-python = ">=3.10"
+requires-python = "==3.10"
 dependencies = [
     "torch",
     "transformers>=4.49.0",
