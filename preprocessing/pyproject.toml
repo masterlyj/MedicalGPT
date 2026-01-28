@@ -1,0 +1,25 @@
+[project]
+name = "medical-data-synthesis"
+version = "0.1.0"
+description = "Multi-agent data synthesis framework for medical QA using LangGraph"
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph>=0.2.0",
+    "langchain-core>=0.3.0",
+    "pydantic>=2.0",
+    "aiohttp>=3.9",
+    "tenacity>=8.0",
+    "jinja2>=3.1",
+    "pyyaml>=6.0",
+    "tqdm>=4.66",
+    "python-dotenv>=1.0",
+    "google-generativeai>=0.3.0",
+    "aiofiles>=25.1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

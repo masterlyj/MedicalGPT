@@ -2,10 +2,10 @@
 name = "medicalgpt"
 version = "0.1.0"
 description = "MedicalGPT training and evaluation"
-requires-python = "==3.10"
+requires-python = "==3.10.*"
 dependencies = [
     "torch",
-    "transformers>=4.49.0",
+    "transformers>=4.50.0",
     "datasets",
     "peft",
     "accelerate",
@@ -17,6 +17,7 @@ dependencies = [
     "gradio",
     "tensorboard",
     "numpy",
+    "swanlab>=0.7.6",
 ]
 
 [tool.uv]

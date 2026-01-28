@@ -1,0 +1,102 @@
+base: # Persona - 基础模型（用于生成 Persona 等简单任务）
+  - name: silicon-qwen3
+    provider: silicon
+    api_key: ${SILICON_API_KEY}
+    base_url: https://api.siliconflow.cn/v1
+    model: Qwen/Qwen3-8B
+    temperature: 0.9
+
+  - name: silicon-deepseek
+    provider: silicon
+    api_key: ${SILICON_API_KEY}
+    base_url: https://api.siliconflow.cn/v1
+    model: deepseek-ai/DeepSeek-R1-0528-Qwen3-8B
+    temperature: 0.9
+
+fast:  # Generator - 快速生成初稿
+  - name: groq-gpt-oss-safeguard
+    provider: groq
+    api_key: ${GROQ_API_KEY}
+    base_url: https://api.groq.com/openai/v1
+    model: openai/gpt-oss-safeguard-20b
+    temperature: 0.7
+  
+  - name: glm-4.7-flash
+    provider: glm
+    api_key: ${GLM_API_KEY}
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    model: glm-4.7-flash
+    temperature: 0.7
+
+  - name: groq-qwen3
+    provider: groq
+    api_key: ${GROQ_API_KEY}
+    base_url: https://api.groq.com/openai/v1
+    model: qwen/qwen3-32b
+    temperature: 0.7
+  
+  - name: groq-gpt-oss-20b
+    provider: groq
+    api_key: ${GROQ_API_KEY}
+    base_url: https://api.groq.com/openai/v1
+    model: openai/gpt-oss-20b
+    temperature: 0.7
+  
+  - name: glm-4.7
+    provider: glm
+    api_key: ${GLM_API_KEY}
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    model: glm-4.7
+    temperature: 0.7
+  
+  - name: deepseek-fallback
+    provider: deepseek
+    api_key: ${DEEPSEEK_API_KEY}
+    base_url: https://api.deepseek.com
+    model: deepseek-chat
+    temperature: 0.7
+
+smart:  # Reviewer - 智能审核
+  
+  - name: groq-gpt-oss-120b
+    provider: groq
+    api_key: ${GROQ_API_KEY}
+    base_url: https://api.groq.com/openai/v1
+    model: openai/gpt-oss-120b
+    temperature: 0.1
+  
+  - name: groq-kimi-k2-instruct
+    provider: groq
+    api_key: ${GROQ_API_KEY}
+    base_url: https://api.groq.com/openai/v1
+    model: moonshotai/kimi-k2-instruct
+    temperature: 0.1
+  
+  - name: glm-4.7
+    provider: glm
+    api_key: ${GLM_API_KEY}
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    model: glm-4.7
+    temperature: 0.1
+  
+  - name: deepseek-fallback
+    provider: deepseek
+    api_key: ${DEEPSEEK_API_KEY}
+    base_url: https://api.deepseek.com
+    model: deepseek-chat
+    temperature: 0.1
+
+strong:  # Revisor - 强力修订
+  - name: groq-kimi-k2-instruct-0905
+    provider: groq
+    api_key: ${GROQ_API_KEY}
+    base_url: https://api.groq.com/openai/v1
+    model: moonshotai/kimi-k2-instruct-0905
+    temperature: 0.3
+  
+  - name: deepseek-fallback
+    provider: deepseek
+    api_key: ${DEEPSEEK_API_KEY}
+    base_url: https://api.deepseek.com
+    model: deepseek-chat
+    temperature: 0.3
